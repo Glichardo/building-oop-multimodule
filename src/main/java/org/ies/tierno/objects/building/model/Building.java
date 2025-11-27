@@ -14,6 +14,14 @@ public class Building {
         this.apartments = apartments;
     }
 
+    public void showInfo() {
+        System.out.println("Edificio " + address +", " + city);
+        for (var apartment: apartments) {
+            apartment.showInfo();
+            System.out.println();
+        }
+    }
+
     public String getAddress() {
         return address;
     }
