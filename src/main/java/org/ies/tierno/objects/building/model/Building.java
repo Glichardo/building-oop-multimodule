@@ -32,6 +32,23 @@ public class Building {
         }
     }
 
+    public void showFloorApartments(int floor) {
+        for (var apartment : apartments) {
+            if (apartment.getFloor() == floor) {
+                apartment.showInfo();
+            }
+        }
+    }
+
+    public Owner[] getApartmentOwners(int floor, String door) {
+        var apartment = findApartment(floor, door);
+        if (apartment != null) {
+            return apartment.getOwners();
+        } else {
+            return null;
+        }
+    }
+
     public void showInfo() {
         System.out.println("Edificio " + address + ", " + city);
         for (var apartment : apartments) {
